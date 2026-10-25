@@ -611,6 +611,12 @@ public class CatalogPieceOfFurniture implements Comparable<CatalogPieceOfFurnitu
   /**
    * Returns the elevation of this piece of furniture.
    */
+  public float getVolume() {return getWidth() * getHeight() * getDepth(); }
+
+  /**
+   * Returns the volume of this piece of furniture
+   *
+   */
   public float getElevation() {
     return this.elevation;
   }
