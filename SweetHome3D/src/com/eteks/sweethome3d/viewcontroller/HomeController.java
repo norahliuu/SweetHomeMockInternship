@@ -2526,6 +2526,8 @@ public class HomeController implements Controller {
             public void handleException(Exception ex) {
               if (!(ex instanceof InterruptedRecorderException)) {
                 if (ex instanceof RecorderException) {
+                  // Keep the underlying print failure available in the Run console.
+                  ex.printStackTrace();
                   String message = preferences.getLocalizedString(
                       HomeController.class, "printError", home.getName());
                   getView().showError(message);
@@ -2559,6 +2561,8 @@ public class HomeController implements Controller {
             public void handleException(Exception ex) {
               if (!(ex instanceof InterruptedRecorderException)) {
                 if (ex instanceof RecorderException) {
+                  // Keep the underlying print failure available in the Run console.
+                  ex.printStackTrace();
                   String message = preferences.getLocalizedString(
                       HomeController.class, "printToPDFError", pdfName);
                   getView().showError(message);
